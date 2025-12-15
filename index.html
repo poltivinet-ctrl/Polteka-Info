@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 
+<!-- blokada cache – żeby box zawsze brał świeżą wersję -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PolTeka – Status systemu</title>
+<title>PolTeka TV – Informacje</title>
 
 <style>
 body {
@@ -19,80 +20,68 @@ body {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
-    padding: 30px 20px 50px;
+    padding: 30px 25px 60px;
 }
 
 .header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .header h1 {
     color: #d4af37;
-    font-size: 40px;
+    font-size: 44px;
     margin-bottom: 6px;
 }
 
+.header p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* sekcje */
 .section {
     background: rgba(255,255,255,0.05);
-    border-radius: 14px;
-    padding: 22px;
-    margin-bottom: 22px;
-    border: 2px solid transparent;
+    border-radius: 16px;
+    padding: 26px;
+    margin-bottom: 26px;
+    border: 1px solid rgba(212,175,55,0.35);
 }
 
 .section h2 {
-    font-size: 26px;
+    font-size: 30px;
     margin-top: 0;
+    color: #d4af37;
 }
 
-/* STATUSY */
-.status-ok {
-    border-color: #00c26e;
+.section p {
+    font-size: 20px;
+    line-height: 1.6;
 }
+
+/* STATUS OK */
+.status-ok {
+    border: 2px solid #00c26e;
+    background: rgba(0, 180, 90, 0.15);
+}
+
 .status-ok h2 {
     color: #00e084;
 }
 
-.status-awaria {
-    border-color: #d9534f;
-}
-.status-awaria h2 {
-    color: #ff6b6b;
+.green {
+    color: #00e084;
+    font-weight: bold;
 }
 
-/* PRZYCISKI */
-.controls {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.controls button {
-    font-size: 18px;
-    padding: 12px 22px;
-    margin: 5px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-ok {
-    background: #00c26e;
-    color: #003d24;
-}
-
-.btn-awaria {
-    background: #d9534f;
-    color: #fff;
-}
-
+/* stopka */
 .footer {
     text-align: center;
-    font-size: 14px;
+    font-size: 15px;
     opacity: 0.7;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 </style>
 </head>
@@ -106,51 +95,93 @@ body {
         <p>Oficjalne informacje dla klientów</p>
     </div>
 
-    <!-- PRZEŁĄCZNIK KLIK -->
-    <div class="controls">
-        <button class="btn-ok" onclick="setStatus('OK')">🟢 STATUS OK</button>
-        <button class="btn-awaria" onclick="setStatus('AWARIA')">🔴 AWARIA / REZERWA</button>
-    </div>
-
-    <!-- STATUS OK -->
-    <div id="status-ok" class="section status-ok">
-        <h2>✅ Status systemu: wszystko działa poprawnie</h2>
-        <p>
-            Wszystkie serwery działają prawidłowo.
+    <!-- STATUS SYSTEMU -->
+    <div class="section status-ok">
+        <h2>✅ Status systemu – wszystko działa poprawnie</h2>
+        <p class="green">
+            Wszystkie serwery działają prawidłowo.  
             Brak awarii i błędów po naszej stronie.
+        </p>
+
+        <p>
+            Jeżeli masz problem z odbiorem usługi, wykonaj standardowe czynności:
+            <br>• odłącz od prądu <strong>telewizor</strong>, <strong>box / stick</strong> oraz <strong>router</strong>
+            <br>• odczekaj około <strong>5 minut</strong>
+            <br>• podłącz urządzenia ponownie
+        </p>
+
+        <p>
+            Po spadku napięcia karty sieciowe i pamięć zostaną wyczyszczone,
+            co w większości przypadków rozwiązuje problem.
+        </p>
+
+        <p>
+            Jeżeli to nie pomoże — <strong>skontaktuj się z nami</strong>.
         </p>
     </div>
 
-    <!-- STATUS AWARIA -->
-    <div id="status-awaria" class="section status-awaria">
-        <h2>🔴 Status systemu: awaria</h2>
-        <p>Występują problemy techniczne.</p>
-        <p><strong>Przechodzimy na serwer rezerwowy.</strong></p>
-        <p>Możliwe chwilowe przerwy w odbiorze.</p>
+    <!-- GRUPY INFO -->
+    <div class="section">
+        <h2>📢 Grupy informacyjne</h2>
+        <p>
+            Jeżeli chcesz być na bieżąco informowany o:
+            <br>• promocjach i konkursach
+            <br>• ewentualnych awariach
+            <br>• stanie technicznym serwerów
+        </p>
+        <p>
+            <strong>koniecznie musisz być na naszej grupie informacyjnej</strong>:
+            <br>👉 WhatsApp lub Facebook.
+        </p>
+        <p>
+            To jedyne miejsca, gdzie publikujemy aktualne informacje.
+        </p>
+    </div>
+
+    <!-- SERWERY REZERWOWE -->
+    <div class="section">
+        <h2>🔄 Serwery rezerwowe</h2>
+        <p>
+            Tylko u nas masz dostęp do <strong>serwerów rezerwowych</strong>.
+            Zostały one stworzone po to, aby w razie problemów technicznych
+            zapewnić ciągłość usługi.
+        </p>
+        <p>
+            W przypadku awarii możesz <strong>samodzielnie przełączyć się
+            na serwer zapasowy</strong> i dalej korzystać z telewizji.
+        </p>
+        <p>
+            To działa jak w życiu:
+            <br>jedziesz samochodem, jeden się psuje — <strong>przesiadasz się do drugiego i jedziesz dalej</strong>.
+        </p>
+    </div>
+
+    <!-- PROGRAM LOJALNOŚCIOWY -->
+    <div class="section">
+        <h2>🎁 Program lojalnościowy</h2>
+        <p>
+            Prowadzimy program lojalnościowy dla naszych klientów.
+        </p>
+        <p>
+            Jeżeli polecisz naszą telewizję nowemu klientowi
+            i dołączy on do naszej usługi:
+        </p>
+        <p class="green">
+            ➜ otrzymujesz <strong>1 miesiąc telewizji GRATIS</strong>
+        </p>
+        <p>
+            Warunek:
+            osoba polecona musi podczas zakupu
+            <strong>podać Twój czterocyfrowy numer klienta</strong>,
+            który otrzymujesz przy zakupie linii.
+        </p>
     </div>
 
     <div class="footer">
-        © PolTeka • Status systemu
+        © PolTeka TV • Oficjalne informacje
     </div>
 
 </div>
-
-<script>
-function setStatus(state) {
-    localStorage.setItem("SYSTEM_STATUS", state);
-    applyStatus();
-}
-
-function applyStatus() {
-    const status = localStorage.getItem("SYSTEM_STATUS") || "OK";
-    document.getElementById("status-ok").style.display =
-        status === "OK" ? "block" : "none";
-    document.getElementById("status-awaria").style.display =
-        status === "AWARIA" ? "block" : "none";
-}
-
-applyStatus();
-</script>
 
 </body>
 </html>
