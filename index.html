@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- BLOKADA CACHE – kluczowe dla Android TV / box -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PolTeka TV – Oficjalne informacje</title>
+<title>PolTeka TV – Status systemu</title>
 
 <style>
 body {
@@ -25,7 +24,6 @@ body {
     padding: 30px 25px 60px;
 }
 
-/* Nagłówek */
 .header {
     text-align: center;
     margin-bottom: 30px;
@@ -42,7 +40,6 @@ body {
     opacity: 0.9;
 }
 
-/* RAMKA STATUSU (u góry) */
 .status-box {
     border-radius: 18px;
     padding: 30px;
@@ -51,21 +48,18 @@ body {
     font-size: 22px;
 }
 
-/* Status OK */
 .status-ok {
     border: 2px solid #00c26e;
     background: rgba(0, 180, 90, 0.18);
     color: #00e084;
 }
 
-/* Status AWARIA */
 .status-awaria {
     border: 2px solid #d9534f;
     background: rgba(217, 83, 79, 0.18);
     color: #ff6b6b;
 }
 
-/* Sekcje stałe */
 .section {
     background: rgba(255,255,255,0.05);
     border-radius: 16px;
@@ -84,131 +78,6 @@ body {
     font-size: 20px;
     line-height: 1.6;
 }
-
-.footer {
-    text-align: center;
-    font-size: 15px;
-    opacity: 0.7;
-    margin-top: 40px;
-}
 </style>
 
-<!-- AUTO-ODŚWIEŻANIE NA BOXIE -->
-<script>
-/* Gdy strona wraca z cache (Android TV) – wymuś reload */
-window.addEventListener("pageshow", function (event) {
-    if (event.persisted) {
-        window.location.reload();
-    }
-});
-
-/* Gdy strona wraca z tła – odśwież */
-document.addEventListener("visibilitychange", function () {
-    if (!document.hidden) {
-        location.reload();
-    }
-});
-</script>
-
-</head>
-
-<body>
-
-<div class="container">
-
-    <!-- NAGŁÓWEK -->
-    <div class="header">
-        <h1>PolTeka TV</h1>
-        <p>Oficjalne informacje dla klientów</p>
-    </div>
-
-    <!-- ================= STATUS SYSTEMU ================= -->
-    <!-- PODMIENIASZ TYLKO TEN BLOK (ZIELONY <-> CZERWONY) -->
-
-    <!-- 🟢 STATUS OK -->
-    <div class="status-box status-awaria">
-    <strong>🔴 Status systemu</strong><br><br>
-    Występuje awaria techniczna.<br>
-    Przełączamy się na serwery rezerwowe.<br>
-    Możliwe są chwilowe przerwy w odbiorze usługi.
-</div>
-
-    <!-- 🔴 STATUS AWARIA – użyj ZAMIAST powyższego, gdy jest problem -->
-    <!--
-    <div class="status-box status-awaria">
-        <strong>🔴 Status systemu</strong><br><br>
-        Występuje awaria techniczna.<br>
-        Przełączamy się na serwery rezerwowe.<br>
-        Możliwe są chwilowe przerwy w odbiorze usługi.
-    </div>
-    -->
-
-    <!-- ================= INSTRUKCJA ================= -->
-    <div class="section">
-        <h2>ℹ Problemy z odbiorem?</h2>
-        <p>
-            Jeżeli masz problem z odbiorem usługi, wykonaj standardowe czynności:
-        </p>
-        <p>
-            • odłącz od prądu <strong>telewizor</strong>, <strong>box / stick</strong> oraz <strong>router</strong><br>
-            • odczekaj około <strong>5 minut</strong><br>
-            • podłącz urządzenia ponownie
-        </p>
-        <p>
-            Po spadku napięcia karty sieciowe i pamięć zostaną wyczyszczone,
-            co w większości przypadków rozwiązuje problem.
-        </p>
-        <p>
-            Jeżeli to nie pomoże — <strong>skontaktuj się z nami</strong>.
-        </p>
-    </div>
-
-    <!-- ================= GRUPY ================= -->
-    <div class="section">
-        <h2>📢 Grupy informacyjne</h2>
-        <p>
-            Jeżeli chcesz być na bieżąco informowany o promocjach,
-            awariach oraz stanie technicznym serwerów,
-            <strong>koniecznie musisz być na naszej grupie</strong>:
-        </p>
-        <p>👉 WhatsApp lub Facebook</p>
-        <p>To jedyne miejsca, gdzie publikujemy aktualne informacje.</p>
-    </div>
-
-    <!-- ================= REZERWA ================= -->
-    <div class="section">
-        <h2>🔄 Serwery rezerwowe</h2>
-        <p>
-            Tylko u nas masz podpięte <strong>serwery rezerwowe</strong>.
-            W razie problemów możesz <strong>samodzielnie przełączyć się
-            na serwer zapasowy</strong> i korzystać dalej z telewizji.
-        </p>
-        <p>
-            Jak w życiu: jeden samochód się psuje —
-            <strong>przesiadasz się do drugiego i jedziesz dalej</strong>.
-        </p>
-    </div>
-
-    <!-- ================= LOJALNOŚĆ ================= -->
-    <div class="section">
-        <h2>🎁 Program lojalnościowy</h2>
-        <p>
-            Jeżeli polecisz naszą telewizję nowemu klientowi
-            i dołączy on do naszej usługi,
-            <strong>otrzymujesz 1 miesiąc GRATIS</strong>.
-        </p>
-        <p>
-            Warunek: osoba polecona musi podczas zakupu
-            <strong>podać Twój czterocyfrowy numer klienta</strong>,
-            który otrzymujesz przy zakupie linii.
-        </p>
-    </div>
-
-    <div class="footer">
-        © PolTeka TV • Oficjalne informacje
-    </div>
-
-</div>
-
-</body>
-</html>
+<!-- 🔁 AUTO-
