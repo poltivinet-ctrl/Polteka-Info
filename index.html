@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- blokada cache – żeby box zawsze brał świeżą wersję -->
+<!-- blokada cache – żeby box zawsze ładował aktualną wersję -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PolTeka TV – Informacje</title>
+<title>PolTeka TV – Informacje dla klientów</title>
 
 <style>
 body {
@@ -20,11 +20,12 @@ body {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
     padding: 30px 25px 60px;
 }
 
+/* nagłówek */
 .header {
     text-align: center;
     margin-bottom: 30px;
@@ -32,7 +33,7 @@ body {
 
 .header h1 {
     color: #d4af37;
-    font-size: 44px;
+    font-size: 46px;
     margin-bottom: 6px;
 }
 
@@ -41,12 +42,35 @@ body {
     opacity: 0.9;
 }
 
-/* sekcje */
+/* RAMKA STATUSU */
+.status-box {
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 22px;
+}
+
+/* STATUS OK */
+.status-ok {
+    border: 2px solid #00c26e;
+    background: rgba(0, 180, 90, 0.18);
+    color: #00e084;
+}
+
+/* STATUS AWARIA */
+.status-awaria {
+    border: 2px solid #d9534f;
+    background: rgba(217, 83, 79, 0.18);
+    color: #ff6b6b;
+}
+
+/* standardowe sekcje */
 .section {
     background: rgba(255,255,255,0.05);
     border-radius: 16px;
-    padding: 26px;
-    margin-bottom: 26px;
+    padding: 28px;
+    margin-bottom: 28px;
     border: 1px solid rgba(212,175,55,0.35);
 }
 
@@ -61,22 +85,6 @@ body {
     line-height: 1.6;
 }
 
-/* STATUS OK */
-.status-ok {
-    border: 2px solid #00c26e;
-    background: rgba(0, 180, 90, 0.15);
-}
-
-.status-ok h2 {
-    color: #00e084;
-}
-
-.green {
-    color: #00e084;
-    font-weight: bold;
-}
-
-/* stopka */
 .footer {
     text-align: center;
     font-size: 15px;
@@ -90,84 +98,82 @@ body {
 
 <div class="container">
 
+    <!-- NAGŁÓWEK -->
     <div class="header">
         <h1>PolTeka TV</h1>
         <p>Oficjalne informacje dla klientów</p>
     </div>
 
-    <!-- STATUS SYSTEMU -->
-    <div class="section status-ok">
-        <h2>✅ Status systemu – wszystko działa poprawnie</h2>
-        <p class="green">
-            Wszystkie serwery działają prawidłowo.  
-            Brak awarii i błędów po naszej stronie.
-        </p>
+    <!-- ================= STATUS SYSTEMU ================= -->
+    <!-- TEN BLOK WYMIENIASZ NA CZERWONY PRZY AWARII -->
+    <div class="status-box status-ok">
+        <strong>🟢 Status systemu</strong><br><br>
+        Wszystko działa poprawnie.<br>
+        Wszystkie serwery działają prawidłowo.<br>
+        Brak awarii i błędów po naszej stronie.
+    </div>
 
+    <!-- ================= INSTRUKCJA ================= -->
+    <div class="section">
+        <h2>ℹ Problemy z odbiorem?</h2>
         <p>
             Jeżeli masz problem z odbiorem usługi, wykonaj standardowe czynności:
-            <br>• odłącz od prądu <strong>telewizor</strong>, <strong>box / stick</strong> oraz <strong>router</strong>
-            <br>• odczekaj około <strong>5 minut</strong>
-            <br>• podłącz urządzenia ponownie
         </p>
-
+        <p>
+            • odłącz od prądu <strong>telewizor</strong>, <strong>box / stick</strong> oraz <strong>router</strong><br>
+            • odczekaj około <strong>5 minut</strong><br>
+            • podłącz urządzenia ponownie
+        </p>
         <p>
             Po spadku napięcia karty sieciowe i pamięć zostaną wyczyszczone,
             co w większości przypadków rozwiązuje problem.
         </p>
-
         <p>
             Jeżeli to nie pomoże — <strong>skontaktuj się z nami</strong>.
         </p>
     </div>
 
-    <!-- GRUPY INFO -->
+    <!-- ================= GRUPY ================= -->
     <div class="section">
         <h2>📢 Grupy informacyjne</h2>
         <p>
-            Jeżeli chcesz być na bieżąco informowany o:
-            <br>• promocjach i konkursach
-            <br>• ewentualnych awariach
-            <br>• stanie technicznym serwerów
+            Jeżeli chcesz być na bieżąco informowany o promocjach,
+            awariach oraz stanie technicznym serwerów,
+            <strong>koniecznie musisz być na naszej grupie</strong>:
         </p>
         <p>
-            <strong>koniecznie musisz być na naszej grupie informacyjnej</strong>:
-            <br>👉 WhatsApp lub Facebook.
+            👉 WhatsApp lub Facebook
         </p>
         <p>
             To jedyne miejsca, gdzie publikujemy aktualne informacje.
         </p>
     </div>
 
-    <!-- SERWERY REZERWOWE -->
+    <!-- ================= REZERWA ================= -->
     <div class="section">
         <h2>🔄 Serwery rezerwowe</h2>
         <p>
-            Tylko u nas masz dostęp do <strong>serwerów rezerwowych</strong>.
-            Zostały one stworzone po to, aby w razie problemów technicznych
+            Tylko u nas masz podpięte <strong>serwery rezerwowe</strong>.
+            Służą one do tego, aby w razie awarii
             zapewnić ciągłość usługi.
         </p>
         <p>
-            W przypadku awarii możesz <strong>samodzielnie przełączyć się
-            na serwer zapasowy</strong> i dalej korzystać z telewizji.
+            W przypadku problemów możesz <strong>samodzielnie przełączyć się
+            na serwer zapasowy</strong> i korzystać dalej z telewizji.
         </p>
         <p>
-            To działa jak w życiu:
-            <br>jedziesz samochodem, jeden się psuje — <strong>przesiadasz się do drugiego i jedziesz dalej</strong>.
+            To jak z samochodem:
+            jeden się psuje — <strong>przesiadasz się do drugiego i jedziesz dalej</strong>.
         </p>
     </div>
 
-    <!-- PROGRAM LOJALNOŚCIOWY -->
+    <!-- ================= LOJALNOŚĆ ================= -->
     <div class="section">
         <h2>🎁 Program lojalnościowy</h2>
         <p>
-            Prowadzimy program lojalnościowy dla naszych klientów.
-        </p>
-        <p>
             Jeżeli polecisz naszą telewizję nowemu klientowi
-            i dołączy on do naszej usługi:
-        </p>
-        <p class="green">
-            ➜ otrzymujesz <strong>1 miesiąc telewizji GRATIS</strong>
+            i dołączy on do naszej usługi,
+            <strong>otrzymujesz 1 miesiąc GRATIS</strong>.
         </p>
         <p>
             Warunek:
