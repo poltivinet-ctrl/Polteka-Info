@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 
+<!-- BLOKADA CACHE – ŻEBY BOX ZAWSZE BRAŁ ŚWIEŻE -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
@@ -45,7 +46,7 @@ body {
     border-radius: 14px;
     padding: 22px;
     margin-bottom: 22px;
-    border: 1px solid rgba(212,175,55,0.35);
+    border: 2px solid transparent;
 }
 
 .section h2 {
@@ -53,13 +54,18 @@ body {
     margin-top: 0;
 }
 
-/* STATUS OK */
 .status-ok {
-    border: 2px solid #00c26e;
+    border-color: #00c26e;
 }
-
 .status-ok h2 {
     color: #00e084;
+}
+
+.status-awaria {
+    border-color: #d9534f;
+}
+.status-awaria h2 {
+    color: #ff6b6b;
 }
 
 .footer {
@@ -69,6 +75,16 @@ body {
     margin-top: 30px;
 }
 </style>
+
+<script>
+/* ================================
+   TU ZMIENIASZ TYLKO JEDNO
+   "OK"      – wszystko działa
+   "AWARIA"  – przechodzimy na rezerwę
+================================== */
+var STATUS = "OK";   // <-- ZMIENIASZ TYLKO TO
+</script>
+
 </head>
 
 <body>
@@ -80,39 +96,37 @@ body {
         <p>Oficjalne informacje dla klientów</p>
     </div>
 
-    <div class="section status-ok">
+    <!-- STATUS OK -->
+    <div id="status-ok" class="section status-ok">
         <h2>✅ Status systemu: wszystko działa poprawnie</h2>
         <p>
             Wszystkie serwery działają prawidłowo.  
             Nie odnotowujemy żadnych błędów ani awarii.
         </p>
         <p>
-            Jeśli występują problemy po Twojej stronie,
-            wykonaj standardowy restart: TV / box / router.
+            W razie problemów wykonaj standardowy restart:
+            TV / box / router.
+        </p>
+    </div>
+
+    <!-- STATUS AWARIA -->
+    <div id="status-awaria" class="section status-awaria">
+        <h2>🔴 Status systemu: awaria</h2>
+        <p>
+            Występują problemy techniczne.
+        </p>
+        <p>
+            <strong>Przechodzimy na serwer rezerwowy.</strong>
+        </p>
+        <p>
+            Możliwe chwilowe przerwy w odbiorze.
         </p>
     </div>
 
     <div class="section">
-        <h2>⛔ Weekend</h2>
+        <h2>📢 Informacja</h2>
         <p>
-            W weekendy obsługujemy wyłącznie awarie techniczne.
-            Sprawy organizacyjne realizujemy w dni robocze.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>📢 Grupa WhatsApp</h2>
-        <p>
-            Wszystkie bieżące informacje publikujemy
-            wyłącznie na oficjalnej grupie WhatsApp.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>🎁 Akcja lojalnościowa</h2>
-        <p>
-            Za każdego poleconego klienta
-            otrzymujesz <strong>1 miesiąc GRATIS</strong>.
+            Aktualne komunikaty publikujemy na grupie WhatsApp.
         </p>
     </div>
 
@@ -121,6 +135,15 @@ body {
     </div>
 
 </div>
+
+<script>
+// LOGIKA AUTOMATU – TEGO NIE DOTYKASZ
+if (STATUS === "OK") {
+    document.getElementById("status-awaria").style.display = "none";
+} else {
+    document.getElementById("status-ok").style.display = "none";
+}
+</script>
 
 </body>
 </html>
