@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- BLOKADA CACHE – ŻEBY BOX ZAWSZE BRAŁ ŚWIEŻE -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
@@ -27,18 +26,13 @@ body {
 
 .header {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .header h1 {
     color: #d4af37;
     font-size: 40px;
     margin-bottom: 6px;
-}
-
-.header p {
-    font-size: 18px;
-    opacity: 0.9;
 }
 
 .section {
@@ -54,6 +48,7 @@ body {
     margin-top: 0;
 }
 
+/* STATUSY */
 .status-ok {
     border-color: #00c26e;
 }
@@ -68,6 +63,31 @@ body {
     color: #ff6b6b;
 }
 
+/* PRZYCISKI */
+.controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    font-size: 18px;
+    padding: 12px 22px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-ok {
+    background: #00c26e;
+    color: #003d24;
+}
+
+.btn-awaria {
+    background: #d9534f;
+    color: #fff;
+}
+
 .footer {
     text-align: center;
     font-size: 14px;
@@ -75,16 +95,6 @@ body {
     margin-top: 30px;
 }
 </style>
-
-<script>
-/* ================================
-   TU ZMIENIASZ TYLKO JEDNO
-   "OK"      – wszystko działa
-   "AWARIA"  – przechodzimy na rezerwę
-================================== */
-var STATUS = "OK";   // <-- ZMIENIASZ TYLKO TO
-</script>
-
 </head>
 
 <body>
@@ -96,38 +106,27 @@ var STATUS = "OK";   // <-- ZMIENIASZ TYLKO TO
         <p>Oficjalne informacje dla klientów</p>
     </div>
 
+    <!-- PRZEŁĄCZNIK KLIK -->
+    <div class="controls">
+        <button class="btn-ok" onclick="setStatus('OK')">🟢 STATUS OK</button>
+        <button class="btn-awaria" onclick="setStatus('AWARIA')">🔴 AWARIA / REZERWA</button>
+    </div>
+
     <!-- STATUS OK -->
     <div id="status-ok" class="section status-ok">
         <h2>✅ Status systemu: wszystko działa poprawnie</h2>
         <p>
-            Wszystkie serwery działają prawidłowo.  
-            Nie odnotowujemy żadnych błędów ani awarii.
-        </p>
-        <p>
-            W razie problemów wykonaj standardowy restart:
-            TV / box / router.
+            Wszystkie serwery działają prawidłowo.
+            Brak awarii i błędów po naszej stronie.
         </p>
     </div>
 
     <!-- STATUS AWARIA -->
     <div id="status-awaria" class="section status-awaria">
         <h2>🔴 Status systemu: awaria</h2>
-        <p>
-            Występują problemy techniczne.
-        </p>
-        <p>
-            <strong>Przechodzimy na serwer rezerwowy.</strong>
-        </p>
-        <p>
-            Możliwe chwilowe przerwy w odbiorze.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>📢 Informacja</h2>
-        <p>
-            Aktualne komunikaty publikujemy na grupie WhatsApp.
-        </p>
+        <p>Występują problemy techniczne.</p>
+        <p><strong>Przechodzimy na serwer rezerwowy.</strong></p>
+        <p>Możliwe chwilowe przerwy w odbiorze.</p>
     </div>
 
     <div class="footer">
@@ -137,12 +136,20 @@ var STATUS = "OK";   // <-- ZMIENIASZ TYLKO TO
 </div>
 
 <script>
-// LOGIKA AUTOMATU – TEGO NIE DOTYKASZ
-if (STATUS === "OK") {
-    document.getElementById("status-awaria").style.display = "none";
-} else {
-    document.getElementById("status-ok").style.display = "none";
+function setStatus(state) {
+    localStorage.setItem("SYSTEM_STATUS", state);
+    applyStatus();
 }
+
+function applyStatus() {
+    const status = localStorage.getItem("SYSTEM_STATUS") || "OK";
+    document.getElementById("status-ok").style.display =
+        status === "OK" ? "block" : "none";
+    document.getElementById("status-awaria").style.display =
+        status === "AWARIA" ? "block" : "none";
+}
+
+applyStatus();
 </script>
 
 </body>
