@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 
+<!-- BLOKADA CACHE (ile się da w HTML) -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
@@ -11,201 +12,221 @@
 <title>PolTeka TV – Informacje dla klientów</title>
 
 <style>
-body{
-  margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(180deg, #081726, #040c14);
-  color:#f2f2f2;
-}
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:30px 25px 60px;
-}
-.header{
-  text-align:center;
-  margin-bottom:25px;
-}
-.header h1{
-  color:#d4af37;
-  font-size:46px;
-  margin:0 0 6px;
-}
-.header p{
-  font-size:20px;
-  opacity:0.9;
-}
+  body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #081726, #040c14);
+    color:#f2f2f2;
+  }
 
-.status-box{
-  border-radius:18px;
-  padding:30px;
-  margin-bottom:18px;
-  text-align:center;
-  font-size:24px;
-}
-.status-ok{
-  border:2px solid #00c26e;
-  background: rgba(0,180,90,0.18);
-  color:#00e084;
-}
+  .container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 25px 60px;
+  }
 
-.refresh-wrap{
-  text-align:center;
-  margin-bottom:35px;
-}
-.refresh-btn{
-  font-size:22px;
-  padding:14px 32px;
-  border-radius:14px;
-  border:none;
-  cursor:pointer;
-  background: linear-gradient(135deg, #d4af37, #b8962e);
-  color:#081726;
-  font-weight:bold;
-}
+  .header{
+    text-align:center;
+    margin-bottom:25px;
+  }
+  .header h1{
+    color:#d4af37;
+    font-size:46px;
+    margin:0 0 6px;
+  }
+  .header p{
+    font-size:20px;
+    opacity:0.9;
+    margin:0;
+  }
 
-.section{
-  background: rgba(255,255,255,0.05);
-  border-radius:16px;
-  padding:26px;
-  margin-bottom:26px;
-  border:1px solid rgba(212,175,55,0.35);
-}
-.section h2{
-  font-size:28px;
-  margin:0 0 10px;
-  color:#d4af37;
-}
-.section p{
-  font-size:20px;
-  line-height:1.6;
-  margin:10px 0;
-}
-.small{
-  font-size:18px;
-  opacity:0.95;
-}
+  .status-box{
+    border-radius:18px;
+    padding:30px;
+    margin-bottom:18px;
+    text-align:center;
+    font-size:24px;
+  }
+  .status-ok{
+    border:2px solid #00c26e;
+    background: rgba(0,180,90,0.18);
+    color:#00e084;
+  }
+  .status-awaria{
+    border:2px solid #d9534f;
+    background: rgba(217,83,79,0.18);
+    color:#ff6b6b;
+  }
 
-.alert{
-  border:2px solid #ffb703;
-  background: rgba(255,183,3,0.12);
-}
-.alert h2{
-  color:#ffb703;
-  font-size:30px;
-}
+  .refresh-wrap{
+    text-align:center;
+    margin-bottom:35px;
+  }
+  .refresh-btn{
+    font-size:22px;
+    padding:14px 32px;
+    border-radius:14px;
+    border:none;
+    cursor:pointer;
+    background: linear-gradient(135deg, #d4af37, #b8962e);
+    color:#081726;
+    font-weight:bold;
+  }
+  .refresh-btn:active{ transform: scale(0.98); }
 
-.badge{
-  padding:6px 12px;
-  border-radius:12px;
-  background: rgba(212,175,55,0.18);
-  border:1px solid rgba(212,175,55,0.35);
-  font-weight:bold;
-}
+  .section{
+    background: rgba(255,255,255,0.05);
+    border-radius:16px;
+    padding:26px;
+    margin-bottom:26px;
+    border: 1px solid rgba(212,175,55,0.35);
+  }
+  .section h2{
+    font-size:28px;
+    margin:0 0 10px;
+    color:#d4af37;
+  }
+  .section p{
+    font-size:20px;
+    line-height:1.6;
+    margin:10px 0;
+  }
+  .section .small{
+    font-size:18px;
+    opacity:0.95;
+  }
 
-.footer{
-  text-align:center;
-  font-size:14px;
-  opacity:0.7;
-  margin-top:40px;
-}
+  .badge{
+    display:inline-block;
+    padding:6px 10px;
+    border-radius:12px;
+    background: rgba(212,175,55,0.18);
+    border:1px solid rgba(212,175,55,0.35);
+    font-weight:bold;
+  }
+
+  .footer{
+    text-align:center;
+    font-size:14px;
+    opacity:0.7;
+    margin-top:40px;
+  }
 </style>
 </head>
 
 <body>
 <div class="container">
 
-<div class="header">
-  <h1>PolTeka TV</h1>
-  <p>Oficjalne informacje dla klientów</p>
+  <!-- NAGŁÓWEK -->
+  <div class="header">
+    <h1>PolTeka TV</h1>
+    <p>Oficjalne informacje dla klientów</p>
+  </div>
+
+  <!-- ================= STATUS SYSTEMU ================= -->
+  <!-- PODMIENIASZ TYLKO TEN BLOK: OK albo AWARIA -->
+
+  <!-- 🟢 STATUS OK -->
+  <div class="status-box status-ok">
+    🟢 <strong>Status systemu: wszystko działa poprawnie</strong><br><br>
+    Wszystkie serwery działają prawidłowo.<br>
+    Brak awarii i problemów po naszej stronie.
+  </div>
+
+  <!-- 🔴 STATUS AWARIA (użyj ZAMIAST zielonego) -->
+  <!--
+  <div class="status-box status-awaria">
+    🔴 <strong>Status systemu: awaria</strong><br><br>
+    Występują problemy techniczne.<br>
+    Przechodzimy na serwery rezerwowe.<br>
+    Możliwe są chwilowe przerwy w odbiorze.
+  </div>
+  -->
+
+  <!-- PRZYCISK TWARDZEGO ODŚWIEŻANIA -->
+  <div class="refresh-wrap">
+    <button class="refresh-btn" onclick="hardRefresh()">
+      🔄 Odśwież informacje
+    </button>
+  </div>
+
+  <!-- ================= RESET / PROBLEMY ================= -->
+  <div class="section">
+    <h2>ℹ️ Masz problem z odbiorem?</h2>
+
+    <p>
+      W pierwszej kolejności wykonaj <strong>pełny reset urządzeń</strong>.
+      To bardzo ważne — musi być zrobione dokładnie.
+    </p>
+
+    <p>
+      • odłącz od prądu <strong>telewizor</strong>, <strong>box / stick</strong> oraz <strong>router</strong><br>
+      • odczekaj <strong>minimum 5 minut</strong> (ten czas jest kluczowy)<br>
+      • podłącz urządzenia ponownie
+    </p>
+
+    <p class="small">
+      Dlaczego to działa? Urządzenia mają procesory i pamięć, które chwilę „trzymają” zasilanie.
+      Dopiero po kilku minutach <strong>napięcie spada do zera</strong> i dopiero wtedy następuje pełne wyczyszczenie pamięci/kart sieciowych.
+      Odłączenie na kilka sekund zwykle <strong>nie pomaga</strong>.
+    </p>
+
+    <p>
+      Jeśli po resecie problem nadal występuje — <strong>skontaktuj się z nami</strong>.
+    </p>
+  </div>
+
+  <!-- ================= WAŻNE INFO / GRUPY ================= -->
+  <div class="section">
+    <h2>📢 Ważne informacje</h2>
+    <p>
+      Informacje o awariach, promocjach i stanie serwerów publikujemy na naszych grupach.
+      <strong>Żeby być na bieżąco, musisz tam być</strong> (WhatsApp lub Facebook).
+    </p>
+  </div>
+
+  <!-- ================= REZERWA ================= -->
+  <div class="section">
+    <h2>🔄 Serwery rezerwowe</h2>
+    <p>
+      Tylko u nas masz dostęp do <strong>serwerów rezerwowych</strong>.
+      W razie problemów możesz przełączyć serwer i korzystać dalej z usługi.
+    </p>
+  </div>
+
+  <!-- ================= LOJALNOŚĆ ================= -->
+  <div class="section">
+    <h2>🎁 Program lojalnościowy</h2>
+    <p>
+      Polecisz nas nowemu klientowi? Otrzymasz <strong>1 miesiąc GRATIS</strong>.
+    </p>
+    <p class="small">
+      Warunek: nowy klient musi podać <strong>Twój czterocyfrowy numer klienta</strong>.
+    </p>
+  </div>
+
+  <!-- ================= ADULT PIN ================= -->
+  <div class="section">
+    <h2>🔐 Dostęp do treści Adult</h2>
+    <p>
+      Kod PIN do sekcji Adult: <span class="badge">0000</span>
+    </p>
+    <p class="small">
+      Jeśli wcześniej był ustawiony inny kod lub dostęp jest zablokowany — sprawdź ustawienia kontroli rodzicielskiej w aplikacji.
+    </p>
+  </div>
+
+  <div class="footer">
+    © PolTeka TV • Oficjalne informacje
+  </div>
+
 </div>
 
-<div class="status-box status-ok">
-  🟢 <strong>Status systemu: wszystko działa poprawnie</strong><br><br>
-  Wszystkie serwery działają prawidłowo. Brak awarii.
-</div>
-
-<div class="refresh-wrap">
-  <button class="refresh-btn" onclick="hardRefresh()">🔄 Odśwież informacje</button>
-</div>
-
-<div class="section">
-  <h2>ℹ️ Problemy z odbiorem</h2>
-  <p>
-    W przypadku problemów z odbiorem usługi wykonaj <strong>pełny reset urządzeń</strong>.
-    Jest to bardzo istotne i musi być wykonane dokładnie.
-  </p>
-  <p>
-    • odłącz od prądu <strong>telewizor</strong>, <strong>box / stick</strong> oraz <strong>router</strong><br>
-    • odczekaj <strong>minimum 5 minut</strong> – ten czas jest kluczowy<br>
-    • dopiero po tym czasie podłącz urządzenia ponownie
-  </p>
-  <p class="small">
-    Urządzenia elektroniczne posiadają procesory i pamięć, które po odłączeniu zasilania
-    nadal są chwilowo pod napięciem. Dopiero po kilku minutach <strong>napięcie spada do zera</strong>,
-    co powoduje całkowite wyczyszczenie pamięci i kart sieciowych.
-    Krótkie odłączenie na kilka sekund <strong>nie resetuje urządzeń</strong> i w większości przypadków nie rozwiązuje problemu.
-  </p>
-</div>
-
-<div class="section">
-  <h2>🔐 Dostęp do treści Adult</h2>
-  <p>
-    Kod PIN do sekcji Adult: <span class="badge">0000</span>
-  </p>
-  <p class="small">
-    Zmiana lub blokada kodu możliwa jest wyłącznie w ustawieniach aplikacji po stronie użytkownika.
-  </p>
-</div>
-
-<!-- ❗ PEŁNA WERSJA KOMUNIKATU -->
-<div class="section alert">
-  <h2>❗ PAMIĘTAJ</h2>
-
-  <p>
-    Nasza telewizja internetowa <strong>nie jest oficjalną platformą streamingową</strong>
-    działającą na takich samych zasadach jak usługi świadczone przez licencjonowanych nadawców
-    i duże, komercyjne platformy streamingowe.
-  </p>
-
-  <p>
-    Właśnie dlatego koszt korzystania z naszej usługi wynosi
-    <strong>około 20% ceny oficjalnych platform</strong>.
-    Niższa cena oznacza jednak inne realia techniczne, z którymi należy się liczyć.
-  </p>
-
-  <p>
-    Musisz mieć świadomość, że <strong>odbiór nigdy nie będzie w 100% taki sam</strong>
-    jak u oficjalnych dostawców posiadających własną infrastrukturę,
-    centra danych i pełną kontrolę nad każdym elementem transmisji.
-  </p>
-
-  <p>
-    Dokładamy wszelkich starań, aby usługa działała
-    <strong>jak najstabilniej i jak najlepiej</strong>,
-    jednak <strong>technologia nie zawsze pozwala na perfekcyjny odbiór w każdej sytuacji</strong>.
-    Na jakość usługi wpływają m.in. obciążenia serwerów, połączenie internetowe,
-    operatorzy sieci, urządzenia końcowe oraz infrastruktura pośrednia.
-  </p>
-
-  <p>
-    Korzystając z naszej telewizji internetowej,
-    <strong>akceptujesz te warunki i ograniczenia</strong>.
-    W zamian otrzymujesz dostęp do szerokiej oferty w znacznie niższej cenie
-    niż w przypadku oficjalnych platform.
-  </p>
-</div>
-
-<div class="footer">
-  © PolTeka TV • Oficjalne informacje
-</div>
-
-</div>
-
+<!-- ===== HARD REFRESH (omija cache boxów) ===== -->
 <script>
 function hardRefresh(){
   const url = new URL(window.location.href);
-  url.searchParams.set("ts", Date.now());
+  url.searchParams.set("ts", Date.now().toString()); // nowy adres = wymusza pobranie
   window.location.replace(url.toString());
 }
 </script>
