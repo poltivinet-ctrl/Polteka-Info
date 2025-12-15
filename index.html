@@ -2,6 +2,12 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
+
+<!-- BLOKADA CACHE – KLUCZOWE DLA ANDROID BOX -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PolTeka – Informacje</title>
 
@@ -85,6 +91,23 @@ body {
     margin-top: 30px;
 }
 </style>
+
+<script>
+// WYMUSZENIE ŚWIEŻEJ WERSJI PRZY KAŻDYM OTWARCIU (ANDROID BOX)
+window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+});
+
+// Gdy wraca z tła – też odśwież
+document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) {
+        location.reload();
+    }
+});
+</script>
+
 </head>
 
 <body>
@@ -104,8 +127,8 @@ body {
             Brak awarii i błędów po naszej stronie.
         </p>
         <p>
-            W przypadku problemów po stronie użytkownika
-            zalecamy standardowy restart urządzeń (TV / box / router).
+            W przypadku problemów zalecamy standardowy restart:
+            TV / box / router.
         </p>
     </div>
 
@@ -114,48 +137,27 @@ body {
     <div class="section status-awaria">
         <h2>🔴 Status systemu: awaria</h2>
         <p>
-            Aktualnie występują problemy techniczne.
+            Występują problemy techniczne.  
             Trwa przełączanie usługi na serwer rezerwowy.
         </p>
         <p>
             Możliwe chwilowe przerwy w odbiorze.
-            Prosimy o cierpliwość.
         </p>
     </div>
     -->
 
-    <!-- WEEKEND -->
     <div class="section">
-        <h2>⛔ Weekend – tylko serwis techniczny</h2>
+        <h2>⛔ Weekend</h2>
         <p>
             W weekendy obsługujemy wyłącznie awarie techniczne.
             Przedłużenia i sprawy organizacyjne realizujemy w dni robocze.
         </p>
     </div>
 
-    <!-- WHATSAPP -->
     <div class="section">
-        <h2>📢 Grupa WhatsApp – obowiązkowa</h2>
+        <h2>📢 Grupa WhatsApp</h2>
         <p>
-            Wszystkie bieżące informacje (awarie, konkursy, nowości)
-            publikujemy wyłącznie na oficjalnej grupie WhatsApp.
+            Wszystkie bieżące informacje publikujemy
+            wyłącznie na oficjalnej grupie WhatsApp.
         </p>
-    </div>
-
-    <!-- LOJALNOŚĆ -->
-    <div class="section">
-        <h2>🎁 Akcja lojalnościowa</h2>
-        <p>
-            Za każdego poleconego klienta
-            otrzymujesz <span class="gold">1 miesiąc GRATIS</span>.
-        </p>
-    </div>
-
-    <div class="footer">
-        © PolTeka • Informacje dla klientów
-    </div>
-
-</div>
-
-</body>
-</html>
+    </
