@@ -3,16 +3,13 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- AUTO-ODŚWIEŻANIE CO 60 SEKUND (NAJPEWNIEJSZE NA ANDROID BOX) -->
-<meta http-equiv="refresh" content="60">
-
 <!-- BLOKADA CACHE -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PolTeka TV – Oficjalne informacje</title>
+<title>PolTeka TV – Informacje dla klientów</title>
 
 <style>
 body {
@@ -31,7 +28,7 @@ body {
 /* Nagłówek */
 .header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .header h1 {
@@ -49,7 +46,7 @@ body {
 .status-box {
     border-radius: 18px;
     padding: 30px;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     text-align: center;
     font-size: 22px;
 }
@@ -66,6 +63,27 @@ body {
     border: 2px solid #d9534f;
     background: rgba(217, 83, 79, 0.18);
     color: #ff6b6b;
+}
+
+/* Przycisk odśwież */
+.refresh-wrap {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.refresh-btn {
+    font-size: 22px;
+    padding: 14px 32px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #d4af37, #b8962e);
+    color: #081726;
+    font-weight: bold;
+}
+
+.refresh-btn:active {
+    transform: scale(0.98);
 }
 
 /* Sekcje */
@@ -101,6 +119,7 @@ body {
 
 <div class="container">
 
+    <!-- NAGŁÓWEK -->
     <div class="header">
         <h1>PolTeka TV</h1>
         <p>Oficjalne informacje dla klientów</p>
@@ -109,12 +128,13 @@ body {
     <!-- ================= STATUS SYSTEMU ================= -->
     <!-- PODMIENIASZ TYLKO TEN BLOK -->
 
-    <div class="status-box status-awaria">
-    <strong>🔴 Status systemu</strong><br><br>
-    Występuje awaria techniczna.<br>
-    Przełączamy się na serwery rezerwowe.<br>
-    Możliwe są chwilowe przerwy w odbiorze usługi.
-</div>
+    <!-- 🟢 STATUS OK -->
+    <div class="status-box status-ok">
+        <strong>🟢 Status systemu</strong><br><br>
+        Wszystko działa poprawnie.<br>
+        Wszystkie serwery działają prawidłowo.<br>
+        Brak awarii i błędów po naszej stronie.
+    </div>
 
     <!-- 🔴 STATUS AWARIA (użyj ZAMIAST zielonego) -->
     <!--
@@ -126,15 +146,61 @@ body {
     </div>
     -->
 
+    <!-- PRZYCISK ODŚWIEŻ -->
+    <div class="refresh-wrap">
+        <button class="refresh-btn" onclick="location.reload()">
+            🔄 Odśwież informacje
+        </button>
+    </div>
+
+    <!-- ================= INSTRUKCJA ================= -->
     <div class="section">
         <h2>ℹ Problemy z odbiorem?</h2>
         <p>
-            Odłącz telewizor, box / stick oraz router od prądu
-            na około 5 minut, następnie podłącz ponownie.
+            Jeżeli masz problem z odbiorem usługi:
+        </p>
+        <p>
+            • odłącz telewizor, box / stick oraz router od prądu<br>
+            • odczekaj około <strong>5 minut</strong><br>
+            • podłącz urządzenia ponownie
         </p>
         <p>
             W większości przypadków to rozwiązuje problem.
             Jeżeli nie — skontaktuj się z nami.
+        </p>
+    </div>
+
+    <!-- ================= GRUPY ================= -->
+    <div class="section">
+        <h2>📢 Grupy informacyjne</h2>
+        <p>
+            Aby być na bieżąco z informacjami o awariach,
+            promocjach i stanie serwerów,
+            <strong>musisz być na naszej grupie</strong>:
+        </p>
+        <p>👉 WhatsApp lub Facebook</p>
+    </div>
+
+    <!-- ================= REZERWA ================= -->
+    <div class="section">
+        <h2>🔄 Serwery rezerwowe</h2>
+        <p>
+            Tylko u nas masz dostęp do <strong>serwerów rezerwowych</strong>.
+            W razie problemów możesz samodzielnie przełączyć się
+            na serwer zapasowy i korzystać dalej z usługi.
+        </p>
+    </div>
+
+    <!-- ================= LOJALNOŚĆ ================= -->
+    <div class="section">
+        <h2>🎁 Program lojalnościowy</h2>
+        <p>
+            Jeżeli polecisz naszą telewizję nowemu klientowi,
+            otrzymujesz <strong>1 miesiąc telewizji GRATIS</strong>.
+        </p>
+        <p>
+            Warunek: osoba polecona musi podać
+            <strong>Twój czterocyfrowy numer klienta</strong>.
         </p>
     </div>
 
