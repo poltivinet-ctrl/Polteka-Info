@@ -80,4 +80,54 @@ body {
 }
 </style>
 
-<!-- 🔁 AUTO-
+<!-- 🔁 AUTO-REFRESH CO 60 SEKUND -->
+<script>
+setInterval(function () {
+    location.reload(true);
+}, 60000); // 60 000 ms = 60 sekund
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>PolTeka TV</h1>
+        <p>Oficjalne informacje dla klientów</p>
+    </div>
+
+    <!-- 🟢 STATUS OK (PODMIENIASZ NA CZERWONY PRZY AWARII) -->
+    <div class="status-box status-ok">
+        <strong>🟢 Status systemu</strong><br><br>
+        Wszystko działa poprawnie.<br>
+        Wszystkie serwery działają prawidłowo.<br>
+        Brak awarii i błędów po naszej stronie.
+    </div>
+
+    <!-- 🔴 STATUS AWARIA
+    <div class="status-box status-awaria">
+        <strong>🔴 Status systemu</strong><br><br>
+        Występuje awaria techniczna.<br>
+        Przełączamy się na serwery rezerwowe.<br>
+        Możliwe są chwilowe przerwy w odbiorze usługi.
+    </div>
+    -->
+
+    <div class="section">
+        <h2>ℹ Problemy z odbiorem?</h2>
+        <p>
+            Odłącz TV, box/stick i router od prądu na 5 minut,
+            następnie podłącz ponownie.
+            W większości przypadków to rozwiązuje problem.
+        </p>
+        <p>
+            Jeżeli to nie pomoże — skontaktuj się z nami.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
