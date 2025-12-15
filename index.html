@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- BLOKADA CACHE -->
+<!-- BLOKADA CACHE (ile się da) -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
@@ -130,11 +130,11 @@ body {
 
     <!-- 🟢 STATUS OK -->
     <div class="status-box status-ok">
-    <strong>🟢 Status systemu</strong><br><br>
-    Wszystko działa poprawnie.<br>
-    Wszystkie serwery działają prawidłowo.<br>
-    Brak awarii i błędów po naszej stronie.
-</div>
+        <strong>🟢 Status systemu</strong><br><br>
+        Wszystko działa poprawnie.<br>
+        Wszystkie serwery działają prawidłowo.<br>
+        Brak awarii i błędów po naszej stronie.
+    </div>
 
     <!-- 🔴 STATUS AWARIA (użyj ZAMIAST zielonego) -->
     <!--
@@ -146,9 +146,9 @@ body {
     </div>
     -->
 
-    <!-- PRZYCISK ODŚWIEŻ -->
+    <!-- PRZYCISK TWARDZEGO ODŚWIEŻANIA -->
     <div class="refresh-wrap">
-        <button class="refresh-btn" onclick="location.reload()">
+        <button class="refresh-btn" onclick="hardRefresh()">
             🔄 Odśwież informacje
         </button>
     </div>
@@ -157,12 +157,8 @@ body {
     <div class="section">
         <h2>ℹ Problemy z odbiorem?</h2>
         <p>
-            Jeżeli masz problem z odbiorem usługi:
-        </p>
-        <p>
-            • odłącz telewizor, box / stick oraz router od prądu<br>
-            • odczekaj około <strong>5 minut</strong><br>
-            • podłącz urządzenia ponownie
+            Odłącz telewizor, box / stick oraz router od prądu
+            na około <strong>5 minut</strong>, następnie podłącz ponownie.
         </p>
         <p>
             W większości przypadków to rozwiązuje problem.
@@ -185,9 +181,8 @@ body {
     <div class="section">
         <h2>🔄 Serwery rezerwowe</h2>
         <p>
-            Tylko u nas masz dostęp do <strong>serwerów rezerwowych</strong>.
             W razie problemów możesz samodzielnie przełączyć się
-            na serwer zapasowy i korzystać dalej z usługi.
+            na <strong>serwer zapasowy</strong> i korzystać dalej z usługi.
         </p>
     </div>
 
@@ -195,8 +190,8 @@ body {
     <div class="section">
         <h2>🎁 Program lojalnościowy</h2>
         <p>
-            Jeżeli polecisz naszą telewizję nowemu klientowi,
-            otrzymujesz <strong>1 miesiąc telewizji GRATIS</strong>.
+            Polecasz nas nowemu klientowi?
+            Otrzymujesz <strong>1 miesiąc telewizji GRATIS</strong>.
         </p>
         <p>
             Warunek: osoba polecona musi podać
@@ -209,6 +204,15 @@ body {
     </div>
 
 </div>
+
+<!-- ===== HARD REFRESH SCRIPT (NAJWAŻNIEJSZE) ===== -->
+<script>
+function hardRefresh(){
+    const url = new URL(window.location.href);
+    url.searchParams.set("ts", Date.now().toString()); // zmiana adresu = brak cache
+    window.location.replace(url.toString());
+}
+</script>
 
 </body>
 </html>
