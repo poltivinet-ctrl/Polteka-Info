@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- BLOKADA CACHE – KLUCZOWE DLA ANDROID BOX -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PolTeka – Informacje</title>
+<title>PolTeka – Status systemu</title>
 
 <style>
 body {
@@ -41,7 +40,6 @@ body {
     opacity: 0.9;
 }
 
-/* SEKCJE */
 .section {
     background: rgba(255,255,255,0.05);
     border-radius: 14px;
@@ -55,20 +53,6 @@ body {
     margin-top: 0;
 }
 
-.section p {
-    font-size: 17px;
-    line-height: 1.5;
-}
-
-/* STATUS OK */
-.status-ok {
-    border: 2px solid #00c26e;
-}
-
-.status-ok h2 {
-    color: #00e084;
-}
-
 /* STATUS AWARIA */
 .status-awaria {
     border: 2px solid #d9534f;
@@ -78,12 +62,6 @@ body {
     color: #ff6b6b;
 }
 
-/* AKCENT */
-.gold {
-    color: #d4af37;
-    font-weight: bold;
-}
-
 .footer {
     text-align: center;
     font-size: 14px;
@@ -91,23 +69,6 @@ body {
     margin-top: 30px;
 }
 </style>
-
-<script>
-// WYMUSZENIE ŚWIEŻEJ WERSJI PRZY KAŻDYM OTWARCIU (ANDROID BOX)
-window.addEventListener("pageshow", function (event) {
-    if (event.persisted) {
-        window.location.reload();
-    }
-});
-
-// Gdy wraca z tła – też odśwież
-document.addEventListener("visibilitychange", function () {
-    if (!document.hidden) {
-        location.reload();
-    }
-});
-</script>
-
 </head>
 
 <body>
@@ -119,45 +80,33 @@ document.addEventListener("visibilitychange", function () {
         <p>Oficjalne informacje dla klientów</p>
     </div>
 
-    <!-- ================= STATUS OK ================= -->
-    <div class="section status-ok">
-        <h2>✅ Status systemu: wszystko działa poprawnie</h2>
-        <p>
-            Wszystkie serwery działają prawidłowo.  
-            Brak awarii i błędów po naszej stronie.
-        </p>
-        <p>
-            W przypadku problemów zalecamy standardowy restart:
-            TV / box / router.
-        </p>
-    </div>
-
-    <!-- ================= STATUS AWARIA / REZERWA ================= -->
-    <!--
     <div class="section status-awaria">
         <h2>🔴 Status systemu: awaria</h2>
         <p>
-            Występują problemy techniczne.  
-            Trwa przełączanie usługi na serwer rezerwowy.
+            Aktualnie występują problemy techniczne.
         </p>
         <p>
-            Możliwe chwilowe przerwy w odbiorze.
+            <strong>Przechodzimy na serwer rezerwowy.</strong>
         </p>
-    </div>
-    -->
-
-    <div class="section">
-        <h2>⛔ Weekend</h2>
         <p>
-            W weekendy obsługujemy wyłącznie awarie techniczne.
-            Przedłużenia i sprawy organizacyjne realizujemy w dni robocze.
+            Możliwe są chwilowe przerwy w odbiorze usługi.
+            Prosimy o cierpliwość.
         </p>
     </div>
 
     <div class="section">
-        <h2>📢 Grupa WhatsApp</h2>
+        <h2>📢 Informacja</h2>
         <p>
-            Wszystkie bieżące informacje publikujemy
-            wyłącznie na oficjalnej grupie WhatsApp.
+            Komunikaty będą aktualizowane na bieżąco.
+            Nie ma potrzeby zgłaszania problemu indywidualnie.
         </p>
-    </
+    </div>
+
+    <div class="footer">
+        © PolTeka • Status systemu
+    </div>
+
+</div>
+
+</body>
+</html>
