@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PolTeka – Informacje dla klientów</title>
+<title>PolTeka – Informacje</title>
 
 <style>
 body {
@@ -21,13 +21,13 @@ body {
 
 .header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .header h1 {
     color: #d4af37;
-    font-size: 42px;
-    margin-bottom: 8px;
+    font-size: 40px;
+    margin-bottom: 6px;
 }
 
 .header p {
@@ -39,24 +39,23 @@ body {
 .section {
     background: rgba(255,255,255,0.05);
     border-radius: 14px;
-    padding: 25px;
-    margin-bottom: 25px;
+    padding: 22px;
+    margin-bottom: 22px;
     border: 1px solid rgba(212,175,55,0.35);
 }
 
 .section h2 {
-    font-size: 28px;
+    font-size: 26px;
     margin-top: 0;
 }
 
 .section p {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 17px;
+    line-height: 1.5;
 }
 
-/* STATUS OK – ZIELONY */
+/* STATUS OK */
 .status-ok {
-    background: rgba(0, 180, 90, 0.18);
     border: 2px solid #00c26e;
 }
 
@@ -64,12 +63,16 @@ body {
     color: #00e084;
 }
 
-.green {
-    color: #00e084;
-    font-weight: bold;
+/* STATUS AWARIA */
+.status-awaria {
+    border: 2px solid #d9534f;
 }
 
-/* AKCENT ZŁOTY */
+.status-awaria h2 {
+    color: #ff6b6b;
+}
+
+/* AKCENT */
 .gold {
     color: #d4af37;
     font-weight: bold;
@@ -79,7 +82,7 @@ body {
     text-align: center;
     font-size: 14px;
     opacity: 0.7;
-    margin-top: 35px;
+    margin-top: 30px;
 }
 </style>
 </head>
@@ -93,66 +96,40 @@ body {
         <p>Oficjalne informacje dla klientów</p>
     </div>
 
-    <!-- STATUS OK -->
+    <!-- ================= STATUS OK ================= -->
     <div class="section status-ok">
         <h2>✅ Status systemu: wszystko działa poprawnie</h2>
         <p>
-            <span class="green">
-            Wszystkie serwery działają prawidłowo.
-            Nie odnotowujemy żadnych błędów ani problemów po naszej stronie.
-            </span>
+            Wszystkie serwery działają prawidłowo.  
+            Brak awarii i błędów po naszej stronie.
         </p>
-
         <p>
-            Jeżeli występują u Ciebie problemy z odbiorem usługi,
-            wykonaj standardowe czynności techniczne:
-        </p>
-
-        <p>
-            1️⃣ Wyłącz z prądu:
-            <br>• telewizor
-            <br>• box / stick
-            <br>• router
-        </p>
-
-        <p>
-            2️⃣ Odczekaj <span class="green">minimum 5 minut</span>,  
-            aż napięcie spadnie do zera i pamięci oraz karty sieciowe się wyczyszczą.
-        </p>
-
-        <p>
-            3️⃣ Podłącz ponownie wszystkie urządzenia i uruchom je.
-        </p>
-
-        <p class="green">
-            W większości przypadków usługa wraca do normy po wykonaniu powyższych kroków.
-        </p>
-
-        <p>
-            Pamiętaj:
-            <br>
-            Jeżeli pojawią się problemy po stronie serwera,
-            <span class="green">
-            w tym miejscu zobaczysz komunikat o przełączeniu na serwer rezerwowy
-            </span>.
+            W przypadku problemów po stronie użytkownika
+            zalecamy standardowy restart urządzeń (TV / box / router).
         </p>
     </div>
+
+    <!-- ================= STATUS AWARIA / REZERWA ================= -->
+    <!--
+    <div class="section status-awaria">
+        <h2>🔴 Status systemu: awaria</h2>
+        <p>
+            Aktualnie występują problemy techniczne.
+            Trwa przełączanie usługi na serwer rezerwowy.
+        </p>
+        <p>
+            Możliwe chwilowe przerwy w odbiorze.
+            Prosimy o cierpliwość.
+        </p>
+    </div>
+    -->
 
     <!-- WEEKEND -->
     <div class="section">
         <h2>⛔ Weekend – tylko serwis techniczny</h2>
         <p>
-            W soboty i niedziele <span class="gold">nie prowadzimy standardowej obsługi</span>.
-        </p>
-        <p>
-            W weekendy obsługiwane są wyłącznie:
-            <br>• awarie techniczne
-            <br>• brak sygnału
-            <br>• problemy uniemożliwiające korzystanie z usługi
-        </p>
-        <p>
-            ❌ nie realizujemy przedłużeń  
-            <br>❌ nie odpowiadamy na pytania organizacyjne
+            W weekendy obsługujemy wyłącznie awarie techniczne.
+            Przedłużenia i sprawy organizacyjne realizujemy w dni robocze.
         </p>
     </div>
 
@@ -160,15 +137,8 @@ body {
     <div class="section">
         <h2>📢 Grupa WhatsApp – obowiązkowa</h2>
         <p>
-            Wszystkie bieżące informacje dotyczące naszej telewizji
-            publikujemy <span class="gold">wyłącznie na oficjalnej grupie WhatsApp</span>.
-        </p>
-        <p>
-            Dotyczy to awarii, konkursów, promocji, przedłużeń
-            oraz informacji o nowych filmach i serialach.
-        </p>
-        <p class="gold">
-            Brak obecności w grupie = brak dostępu do informacji.
+            Wszystkie bieżące informacje (awarie, konkursy, nowości)
+            publikujemy wyłącznie na oficjalnej grupie WhatsApp.
         </p>
     </div>
 
@@ -176,11 +146,8 @@ body {
     <div class="section">
         <h2>🎁 Akcja lojalnościowa</h2>
         <p>
-            Za każdego nowego klienta, którego polecisz,
-            otrzymujesz <span class="gold">1 miesiąc telewizji GRATIS</span>.
-        </p>
-        <p>
-            Akcja obowiązuje bez limitu.
+            Za każdego poleconego klienta
+            otrzymujesz <span class="gold">1 miesiąc GRATIS</span>.
         </p>
     </div>
 
