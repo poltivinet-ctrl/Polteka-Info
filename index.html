@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PolTeka – Informacje</title>
+<title>PolTeka – Informacje dla klientów</title>
 
 <style>
 body {
@@ -35,16 +35,16 @@ body {
     opacity: 0.9;
 }
 
+/* SEKCJE */
 .section {
     background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(212,175,55,0.35);
     border-radius: 14px;
     padding: 25px;
     margin-bottom: 25px;
+    border: 1px solid rgba(212,175,55,0.35);
 }
 
 .section h2 {
-    color: #d4af37;
     font-size: 28px;
     margin-top: 0;
 }
@@ -54,11 +54,22 @@ body {
     line-height: 1.6;
 }
 
-.alert {
-    background: rgba(212,175,55,0.18);
-    border: 2px solid #d4af37;
+/* STATUS OK – ZIELONY */
+.status-ok {
+    background: rgba(0, 180, 90, 0.18);
+    border: 2px solid #00c26e;
 }
 
+.status-ok h2 {
+    color: #00e084;
+}
+
+.green {
+    color: #00e084;
+    font-weight: bold;
+}
+
+/* AKCENT ZŁOTY */
 .gold {
     color: #d4af37;
     font-weight: bold;
@@ -82,48 +93,50 @@ body {
         <p>Oficjalne informacje dla klientów</p>
     </div>
 
-    <!-- STATUS / AWARIA / REZERWA -->
-    <!-- STATUS SYSTEMU – WSZYSTKO OK -->
-<div class="section">
-    <h2>✅ Status systemu</h2>
-    <p>
-        <span class="gold">Wszystkie serwery działają prawidłowo</span> – nie odnotowujemy
-        żadnych błędów ani awarii po naszej stronie.
-    </p>
+    <!-- STATUS OK -->
+    <div class="section status-ok">
+        <h2>✅ Status systemu: wszystko działa poprawnie</h2>
+        <p>
+            <span class="green">
+            Wszystkie serwery działają prawidłowo.
+            Nie odnotowujemy żadnych błędów ani problemów po naszej stronie.
+            </span>
+        </p>
 
-    <p>
-        Jeżeli występują problemy z odbiorem usługi, wykonaj standardową procedurę:
-    </p>
+        <p>
+            Jeżeli występują u Ciebie problemy z odbiorem usługi,
+            wykonaj standardowe czynności techniczne:
+        </p>
 
-    <p>
-        1️⃣ Wyłącz z prądu:
-        <br>• telewizor
-        <br>• box / stick
-        <br>• router
-    </p>
+        <p>
+            1️⃣ Wyłącz z prądu:
+            <br>• telewizor
+            <br>• box / stick
+            <br>• router
+        </p>
 
-    <p>
-        2️⃣ Odczekaj <span class="gold">minimum 5 minut</span>  
-        (napięcie spadnie do zera, a pamięci i karty sieciowe zostaną wyczyszczone)
-    </p>
+        <p>
+            2️⃣ Odczekaj <span class="green">minimum 5 minut</span>,  
+            aż napięcie spadnie do zera i pamięci oraz karty sieciowe się wyczyszczą.
+        </p>
 
-    <p>
-        3️⃣ Podłącz ponownie wszystkie urządzenia i uruchom je
-    </p>
+        <p>
+            3️⃣ Podłącz ponownie wszystkie urządzenia i uruchom je.
+        </p>
 
-    <p class="gold">
-        W większości przypadków problem ustępuje i usługa wraca do normy.
-    </p>
+        <p class="green">
+            W większości przypadków usługa wraca do normy po wykonaniu powyższych kroków.
+        </p>
 
-    <p>
-        Pamiętaj:
-        <br>
-        Jeżeli wystąpiłby problem po stronie serwera,
-        <span class="gold">
-        w tym miejscu pojawi się komunikat o przełączeniu na serwer rezerwowy
-        </span>.
-    </p>
-</div>
+        <p>
+            Pamiętaj:
+            <br>
+            Jeżeli pojawią się problemy po stronie serwera,
+            <span class="green">
+            w tym miejscu zobaczysz komunikat o przełączeniu na serwer rezerwowy
+            </span>.
+        </p>
+    </div>
 
     <!-- WEEKEND -->
     <div class="section">
@@ -132,14 +145,14 @@ body {
             W soboty i niedziele <span class="gold">nie prowadzimy standardowej obsługi</span>.
         </p>
         <p>
-            W weekendy obsługujemy wyłącznie:
+            W weekendy obsługiwane są wyłącznie:
             <br>• awarie techniczne
             <br>• brak sygnału
             <br>• problemy uniemożliwiające korzystanie z usługi
         </p>
         <p>
-            ❌ nie realizujemy przedłużeń<br>
-            ❌ nie odpowiadamy na pytania organizacyjne
+            ❌ nie realizujemy przedłużeń  
+            <br>❌ nie odpowiadamy na pytania organizacyjne
         </p>
     </div>
 
@@ -147,7 +160,7 @@ body {
     <div class="section">
         <h2>📢 Grupa WhatsApp – obowiązkowa</h2>
         <p>
-            Wszystkie ważne informacje dotyczące naszej telewizji
+            Wszystkie bieżące informacje dotyczące naszej telewizji
             publikujemy <span class="gold">wyłącznie na oficjalnej grupie WhatsApp</span>.
         </p>
         <p>
