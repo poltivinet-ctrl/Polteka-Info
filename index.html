@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- blokada cache – żeby box zawsze ładował aktualną wersję -->
+<!-- BLOKADA CACHE – kluczowe dla Android TV / box -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PolTeka TV – Informacje dla klientów</title>
+<title>PolTeka TV – Oficjalne informacje</title>
 
 <style>
 body {
@@ -25,7 +25,7 @@ body {
     padding: 30px 25px 60px;
 }
 
-/* nagłówek */
+/* Nagłówek */
 .header {
     text-align: center;
     margin-bottom: 30px;
@@ -42,7 +42,7 @@ body {
     opacity: 0.9;
 }
 
-/* RAMKA STATUSU */
+/* RAMKA STATUSU (u góry) */
 .status-box {
     border-radius: 18px;
     padding: 30px;
@@ -51,21 +51,21 @@ body {
     font-size: 22px;
 }
 
-/* STATUS OK */
+/* Status OK */
 .status-ok {
     border: 2px solid #00c26e;
     background: rgba(0, 180, 90, 0.18);
     color: #00e084;
 }
 
-/* STATUS AWARIA */
+/* Status AWARIA */
 .status-awaria {
     border: 2px solid #d9534f;
     background: rgba(217, 83, 79, 0.18);
     color: #ff6b6b;
 }
 
-/* standardowe sekcje */
+/* Sekcje stałe */
 .section {
     background: rgba(255,255,255,0.05);
     border-radius: 16px;
@@ -92,6 +92,24 @@ body {
     margin-top: 40px;
 }
 </style>
+
+<!-- AUTO-ODŚWIEŻANIE NA BOXIE -->
+<script>
+/* Gdy strona wraca z cache (Android TV) – wymuś reload */
+window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+});
+
+/* Gdy strona wraca z tła – odśwież */
+document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) {
+        location.reload();
+    }
+});
+</script>
+
 </head>
 
 <body>
@@ -105,13 +123,25 @@ body {
     </div>
 
     <!-- ================= STATUS SYSTEMU ================= -->
-    <!-- TEN BLOK WYMIENIASZ NA CZERWONY PRZY AWARII -->
-<div class="status-box status-ok">
-    <strong>🟢 Status systemu</strong><br><br>
-    Wszystko działa poprawnie.<br>
-    Wszystkie serwery działają prawidłowo.<br>
-    Brak awarii i błędów po naszej stronie.
-</div>
+    <!-- PODMIENIASZ TYLKO TEN BLOK (ZIELONY <-> CZERWONY) -->
+
+    <!-- 🟢 STATUS OK -->
+    <div class="status-box status-ok">
+        <strong>🟢 Status systemu</strong><br><br>
+        Wszystko działa poprawnie.<br>
+        Wszystkie serwery działają prawidłowo.<br>
+        Brak awarii i błędów po naszej stronie.
+    </div>
+
+    <!-- 🔴 STATUS AWARIA – użyj ZAMIAST powyższego, gdy jest problem -->
+    <!--
+    <div class="status-box status-awaria">
+        <strong>🔴 Status systemu</strong><br><br>
+        Występuje awaria techniczna.<br>
+        Przełączamy się na serwery rezerwowe.<br>
+        Możliwe są chwilowe przerwy w odbiorze usługi.
+    </div>
+    -->
 
     <!-- ================= INSTRUKCJA ================= -->
     <div class="section">
@@ -141,12 +171,8 @@ body {
             awariach oraz stanie technicznym serwerów,
             <strong>koniecznie musisz być na naszej grupie</strong>:
         </p>
-        <p>
-            👉 WhatsApp lub Facebook
-        </p>
-        <p>
-            To jedyne miejsca, gdzie publikujemy aktualne informacje.
-        </p>
+        <p>👉 WhatsApp lub Facebook</p>
+        <p>To jedyne miejsca, gdzie publikujemy aktualne informacje.</p>
     </div>
 
     <!-- ================= REZERWA ================= -->
@@ -154,16 +180,12 @@ body {
         <h2>🔄 Serwery rezerwowe</h2>
         <p>
             Tylko u nas masz podpięte <strong>serwery rezerwowe</strong>.
-            Służą one do tego, aby w razie awarii
-            zapewnić ciągłość usługi.
-        </p>
-        <p>
-            W przypadku problemów możesz <strong>samodzielnie przełączyć się
+            W razie problemów możesz <strong>samodzielnie przełączyć się
             na serwer zapasowy</strong> i korzystać dalej z telewizji.
         </p>
         <p>
-            To jak z samochodem:
-            jeden się psuje — <strong>przesiadasz się do drugiego i jedziesz dalej</strong>.
+            Jak w życiu: jeden samochód się psuje —
+            <strong>przesiadasz się do drugiego i jedziesz dalej</strong>.
         </p>
     </div>
 
@@ -176,8 +198,7 @@ body {
             <strong>otrzymujesz 1 miesiąc GRATIS</strong>.
         </p>
         <p>
-            Warunek:
-            osoba polecona musi podczas zakupu
+            Warunek: osoba polecona musi podczas zakupu
             <strong>podać Twój czterocyfrowy numer klienta</strong>,
             który otrzymujesz przy zakupie linii.
         </p>
